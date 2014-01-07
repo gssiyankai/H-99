@@ -1,4 +1,4 @@
-module H99( myLast, myButLast, elementAt ) where
+module H99( myLast, myButLast, elementAt, myLength ) where
 
 -- Problem 1
 myLast :: [a] -> a
@@ -15,3 +15,11 @@ elementAt :: [a] -> Int -> a
 elementAt (x : xs) index 
 	| index == 1	= x
 	| otherwise	= elementAt xs (index-1)
+
+-- Problem 4
+myLength :: [a] -> Int
+myLength list = myLength' list 0
+	where 
+		myLength' [x] l = l+1
+		myLength' (_ : xs) l = myLength' xs l+1
+
