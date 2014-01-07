@@ -1,6 +1,6 @@
 import H99 (
 	myLast, myButLast, elementAt, myLength, myReverse, 
-	isPalindrome 
+	isPalindrome, NestedList(Elem, List), flatten
 	)
 import Test.HUnit
 
@@ -42,6 +42,15 @@ problem6 = TestCase $ do
 	assertEqual 
   		"Find out whether a list is a palindrome" True (isPalindrome [1,2,4,8,16,8,4,2,1])
 
+problem7 = TestCase $ do
+	assertEqual
+		"Flatten a nested list structure" [5] (flatten (Elem 5))
+	assertEqual
+		"Flatten a nested list structure" [1, 2, 3, 4, 5] (flatten (List [Elem 1, List [Elem 2, List [Elem 3, Elem 4], Elem 5]]))
+--	assertEqual
+--		"Flatten a nested list structure" [] (flatten (List []))
+
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -49,5 +58,6 @@ main = runTestTT $ TestList
 				problem3,
 				problem4,
 				problem5,
-				problem6
+				problem6,
+				problem7
 			]

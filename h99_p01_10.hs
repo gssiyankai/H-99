@@ -1,6 +1,6 @@
 module H99 (
 	myLast, myButLast, elementAt, myLength, myReverse,
-	isPalindrome
+	isPalindrome, NestedList(Elem, List), flatten
 	) where
 
 -- Problem 1
@@ -36,3 +36,9 @@ myReverse list = myReverse' list []
 -- Problem 6
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome xs = xs == (reverse xs)
+
+-- Problem 7
+data NestedList a = Elem a | List [NestedList a]
+flatten :: NestedList a -> [a]
+flatten (Elem x) = [x]
+flatten (List xs) = foldl (++) [] $ map flatten xs
