@@ -1,4 +1,7 @@
-module H99( myLast, myButLast, elementAt, myLength, myReverse ) where
+module H99 (
+	myLast, myButLast, elementAt, myLength, myReverse,
+	isPalindrome
+	) where
 
 -- Problem 1
 myLast :: [a] -> a
@@ -29,3 +32,7 @@ myReverse list = myReverse' list []
 	where
 		myReverse' [] result = result
 		myReverse' (x : xs) result = myReverse' xs (x : result)
+
+-- Problem 6
+isPalindrome :: (Eq a) => [a] -> Bool
+isPalindrome xs = xs == (reverse xs)

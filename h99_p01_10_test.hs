@@ -1,4 +1,7 @@
-import H99( myLast, myButLast, elementAt, myLength, myReverse )
+import H99 (
+	myLast, myButLast, elementAt, myLength, myReverse, 
+	isPalindrome 
+	)
 import Test.HUnit
 
 problem1 = TestCase $ do
@@ -31,11 +34,20 @@ problem5 = TestCase $ do
 	assertEqual
   		"Reverse a list of integers" [4,3,2,1] (myReverse [1,2,3,4])
 
+problem6 = TestCase $ do
+	assertEqual 
+  		"Find out whether a list is a palindrome" False (isPalindrome [1,2,3])
+	assertEqual 
+  		"Find out whether a string is a palindrome" True (isPalindrome "madamimadam")
+	assertEqual 
+  		"Find out whether a list is a palindrome" True (isPalindrome [1,2,4,8,16,8,4,2,1])
+
 main = runTestTT $ TestList
 			[
 				problem1,
 				problem2,
 				problem3,
 				problem4,
-				problem5
+				problem5,
+				problem6
 			]
