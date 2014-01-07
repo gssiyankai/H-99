@@ -1,4 +1,4 @@
-module H99( myLast, myButLast, elementAt, myLength ) where
+module H99( myLast, myButLast, elementAt, myLength, myReverse ) where
 
 -- Problem 1
 myLast :: [a] -> a
@@ -23,3 +23,9 @@ myLength list = myLength' list 0
 		myLength' [x] l = l+1
 		myLength' (_ : xs) l = myLength' xs l+1
 
+-- Problem 5
+myReverse :: [a] -> [a]
+myReverse list = myReverse' list []
+	where
+		myReverse' [] result = result
+		myReverse' (x : xs) result = myReverse' xs (x : result)

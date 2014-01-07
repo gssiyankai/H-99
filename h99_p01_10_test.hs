@@ -1,4 +1,4 @@
-import H99( myLast, myButLast, elementAt, myLength )
+import H99( myLast, myButLast, elementAt, myLength, myReverse )
 import Test.HUnit
 
 problem1 = TestCase $ do
@@ -25,10 +25,17 @@ problem4 = TestCase $ do
 	assertEqual 
   		"Find the length of a string" 13 (myLength "Hello, world!")
 
+problem5 = TestCase $ do
+	assertEqual 
+  		"Reverse a string" "!amanap ,lanac a ,nalp a ,nam A" (myReverse "A man, a plan, a canal, panama!")
+	assertEqual
+  		"Reverse a list of integers" [4,3,2,1] (myReverse [1,2,3,4])
+
 main = runTestTT $ TestList
 			[
 				problem1,
 				problem2,
 				problem3,
-				problem4
+				problem4,
+				problem5
 			]
