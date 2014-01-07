@@ -1,4 +1,4 @@
-import H99( myLast, myButLast )
+import H99( myLast, myButLast, elementAt )
 import Test.HUnit
 
 problem1 = TestCase $ do
@@ -13,8 +13,15 @@ problem2 = TestCase $ do
 	assertEqual 
   		"Find the last but one element of a list of chars" 'y' (myButLast ['a'..'z'])
 
+problem3 = TestCase $ do
+	assertEqual 
+  		"Find the K'th element of a list of integers" 2 (elementAt [1,2,3] 2)
+	assertEqual 
+  		"Find the K'th element of a string" 'e' (elementAt "haskell" 5)
+
 main = runTestTT $ TestList
 			[
 				problem1,
-				problem2
+				problem2,
+				problem3
 			]
