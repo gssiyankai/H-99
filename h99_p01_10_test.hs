@@ -1,6 +1,6 @@
 import H99 (
 	myLast, myButLast, elementAt, myLength, myReverse, 
-	isPalindrome, NestedList(Elem, List), flatten, compress
+	isPalindrome, NestedList(Elem, List), flatten, compress, pack
 	)
 import Test.HUnit
 
@@ -54,6 +54,11 @@ problem8 = TestCase $ do
 	assertEqual 
   		"Eliminate consecutive duplicates of list elements" "abcade" (compress "aaaabccaadeeee")
 
+problem9 = TestCase $ do
+	assertEqual 
+  		"Pack consecutive duplicates of list elements into sublists" ["aaaa","b","cc","aa","d","eeee"] (pack ['a', 'a', 'a', 'a', 'b', 'c', 'c', 'a', 'a', 'd', 'e', 'e', 'e', 'e'])
+
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -63,5 +68,6 @@ main = runTestTT $ TestList
 				problem5,
 				problem6,
 				problem7,
-				problem8
+				problem8,
+				problem9
 			]
