@@ -1,6 +1,6 @@
 module H99 (
 	myLast, myButLast, elementAt, myLength, myReverse,
-	isPalindrome, NestedList(Elem, List), flatten
+	isPalindrome, NestedList(Elem, List), flatten, compress
 	) where
 
 -- Problem 1
@@ -42,3 +42,12 @@ data NestedList a = Elem a | List [NestedList a]
 flatten :: NestedList a -> [a]
 flatten (Elem x) = [x]
 flatten (List xs) = foldl (++) [] $ map flatten xs
+
+-- Problem 8
+compress :: (Eq a) => [a] -> [a]
+compress xs = foldr (compress') [] xs
+		where
+			compress' i j
+				| null j	= [i]
+				| i == (head j)	= j
+				| otherwise	= i:j

@@ -1,6 +1,6 @@
 import H99 (
 	myLast, myButLast, elementAt, myLength, myReverse, 
-	isPalindrome, NestedList(Elem, List), flatten
+	isPalindrome, NestedList(Elem, List), flatten, compress
 	)
 import Test.HUnit
 
@@ -50,6 +50,9 @@ problem7 = TestCase $ do
 --	assertEqual
 --		"Flatten a nested list structure" [] (flatten (List []))
 
+problem8 = TestCase $ do
+	assertEqual 
+  		"Eliminate consecutive duplicates of list elements" "abcade" (compress "aaaabccaadeeee")
 
 main = runTestTT $ TestList
 			[
@@ -59,5 +62,6 @@ main = runTestTT $ TestList
 				problem4,
 				problem5,
 				problem6,
-				problem7
+				problem7,
+				problem8
 			]
