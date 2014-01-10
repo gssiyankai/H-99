@@ -54,6 +54,7 @@ compress xs = foldr (compress') [] xs
 
 -- Problem 9
 pack :: (Eq a) => [a] -> [[a]]
-pack = undefined
-
+pack list@(x:xs) = let (first,rest) = span (==x) list
+			in first : pack rest
+pack [] = []
 
