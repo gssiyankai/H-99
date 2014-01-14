@@ -1,8 +1,4 @@
-import H99 (
-	myLast, myButLast, elementAt, myLength, myReverse, 
-	isPalindrome, NestedList(Elem, List), flatten, 
-	compress, pack, encode
-	)
+import H99
 import Test.HUnit
 
 problem1 = TestCase $ do

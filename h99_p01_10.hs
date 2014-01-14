@@ -1,8 +1,4 @@
-module H99 (
-	myLast, myButLast, elementAt, myLength, myReverse,
-	isPalindrome, NestedList(Elem, List), flatten,
-	compress, pack, encode
-	) where
+module H99 where
 
 -- Problem 1
 myLast :: [a] -> a
