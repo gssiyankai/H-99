@@ -59,3 +59,18 @@ pack [] = []
 encode :: Eq a => [a] -> [(Int, a)]
 encode = map (\x -> (length x, head x)) . pack
 
+-- Problem 11
+data ListItem a = Multiple Int a | Single a
+	deriving (Show, Eq)
+encodeModified :: Eq a => [a] -> [ListItem a]
+encodeModified = map encodeModified' . encode
+	where 
+		encodeModified' (1, a) = Single a
+		encodeModified' (n, a) = Multiple n a
+
+-- Problem 12
+decodeModified :: Eq a => [ListItem a] -> [a]
+decodeModified ((Single x):xs)    = [x] ++ (decodeModified xs)
+decodeModified ((Multiple n x):xs) = (replicate n x) ++ (decodeModified xs) 
+decodeModified [] = []
+

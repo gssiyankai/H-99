@@ -59,6 +59,14 @@ problem10 = TestCase $ do
 	assertEqual 
   		"Run-length encoding of a list" [(4,'a'),(1,'b'),(2,'c'),(2,'a'),(1,'d'),(4,'e')] (encode "aaaabccaadeeee")
 
+problem11 = TestCase $ do
+	assertEqual 
+  		"Modified run-length encoding" [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e'] (encodeModified "aaaabccaadeeee")
+
+problem12 = TestCase $ do
+	assertEqual 
+  		"Decode a run-length encoded list" "aaaabccaadeeee" (decodeModified [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e'])
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -70,5 +78,7 @@ main = runTestTT $ TestList
 				problem7,
 				problem8,
 				problem9,
-				problem10
+				problem10,
+				problem11,
+				problem12
 			]
