@@ -67,6 +67,10 @@ problem12 = TestCase $ do
 	assertEqual 
   		"Decode a run-length encoded list" "aaaabccaadeeee" (decodeModified [Multiple 4 'a',Single 'b',Multiple 2 'c', Multiple 2 'a',Single 'd',Multiple 4 'e'])
 
+problem13 = TestCase $ do
+	assertEqual 
+  		"Run-length encoding of a list (direct solution)" [Multiple 4 'a',Single 'b',Multiple 2 'c',  Multiple 2 'a',Single 'd',Multiple 4 'e'] (encodeDirect "aaaabccaadeeee")
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -80,5 +84,6 @@ main = runTestTT $ TestList
 				problem9,
 				problem10,
 				problem11,
-				problem12
+				problem12,
+				problem13
 			]

@@ -74,3 +74,16 @@ decodeModified ((Single x):xs)    = [x] ++ (decodeModified xs)
 decodeModified ((Multiple n x):xs) = (replicate n x) ++ (decodeModified xs) 
 decodeModified [] = []
 
+-- Problem 13
+encodeDirect :: Eq a => [a] -> [ListItem a]
+encodeDirect (x:xs) = encodeDirect' 1 x xs
+	where
+		encodeDirect' n x (y:xs)
+			| x == y	= encodeDirect' (n+1) x xs
+			| otherwise	= encodeElement n x : (encodeDirect' 1 y xs)
+		encodeDirect' n x [] = [encodeElement n x]
+		encodeElement n x
+			| n == 1	= Single x
+			| otherwise	= Multiple n x
+encodeDirect [] = []
+
