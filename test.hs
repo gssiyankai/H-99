@@ -71,6 +71,11 @@ problem13 = TestCase $ do
 	assertEqual 
   		"Run-length encoding of a list (direct solution)" [Multiple 4 'a',Single 'b',Multiple 2 'c',  Multiple 2 'a',Single 'd',Multiple 4 'e'] (encodeDirect "aaaabccaadeeee")
 
+problem14 = TestCase $ do
+	assertEqual 
+  		"Duplicate the elements of a list" [1,1,2,2,3,3] (dupli [1, 2, 3])
+
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -85,5 +90,6 @@ main = runTestTT $ TestList
 				problem10,
 				problem11,
 				problem12,
-				problem13
+				problem13,
+				problem14
 			]

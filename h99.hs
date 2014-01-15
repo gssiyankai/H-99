@@ -87,3 +87,7 @@ encodeDirect (x:xs) = encodeDirect' 1 x xs
 			| otherwise	= Multiple n x
 encodeDirect [] = []
 
+-- Problem 14
+dupli :: [a] -> [a]
+dupli = concatMap (replicate 2)
+
