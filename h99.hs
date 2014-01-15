@@ -91,3 +91,7 @@ encodeDirect [] = []
 dupli :: [a] -> [a]
 dupli = concatMap (replicate 2)
 
+-- Problem 15
+repli :: [a] -> Int -> [a]
+repli xs n = concatMap (replicate n) xs
+

@@ -75,6 +75,10 @@ problem14 = TestCase $ do
 	assertEqual 
   		"Duplicate the elements of a list" [1,1,2,2,3,3] (dupli [1, 2, 3])
 
+problem15 = TestCase $ do
+	assertEqual 
+  		"Replicate the elements of a list a given number of times" "aaabbbccc" (repli "abc" 3)
+
 
 main = runTestTT $ TestList
 			[
@@ -91,5 +95,6 @@ main = runTestTT $ TestList
 				problem11,
 				problem12,
 				problem13,
-				problem14
+				problem14,
+				problem15
 			]
