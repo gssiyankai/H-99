@@ -111,3 +111,8 @@ split (x:xs) n = split' [x] xs n 1
 slice :: [a] -> Int -> Int -> [a]
 slice xs a b = snd $ split (fst $ split xs b) (a-1)
 
+-- Problem 19
+rotate :: [a] -> Int -> [a]
+rotate xs n = drop nn xs ++ take nn xs
+	where nn = n `mod` (length xs)
+

@@ -93,6 +93,12 @@ problem18 = TestCase $ do
 	assertEqual 
   		"Extract a slice from a list" "cdefg" (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7)
 
+problem19 = TestCase $ do
+	assertEqual 
+  		"Rotate a list N places to the left. " "defghabc" (rotate ['a','b','c','d','e','f','g','h'] 3)
+	assertEqual 
+  		"Rotate a list N places to the left. " "ghabcdef" (rotate ['a','b','c','d','e','f','g','h'] (-2))
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -112,5 +118,6 @@ main = runTestTT $ TestList
 				problem15,
 				problem16,
 				problem17,
-				problem18
+				problem18,
+				problem19
 			]
