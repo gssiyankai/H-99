@@ -95,9 +95,13 @@ problem18 = TestCase $ do
 
 problem19 = TestCase $ do
 	assertEqual 
-  		"Rotate a list N places to the left. " "defghabc" (rotate ['a','b','c','d','e','f','g','h'] 3)
+  		"Rotate a list N places to the left" "defghabc" (rotate ['a','b','c','d','e','f','g','h'] 3)
 	assertEqual 
-  		"Rotate a list N places to the left. " "ghabcdef" (rotate ['a','b','c','d','e','f','g','h'] (-2))
+  		"Rotate a list N places to the left" "ghabcdef" (rotate ['a','b','c','d','e','f','g','h'] (-2))
+
+problem20 = TestCase $ do
+	assertEqual 
+  		"Remove the K'th element from a list" ('b',"acd") (removeAt 2 "abcd")
 
 main = runTestTT $ TestList
 			[
@@ -119,5 +123,6 @@ main = runTestTT $ TestList
 				problem16,
 				problem17,
 				problem18,
-				problem19
+				problem19,
+				problem20
 			]
