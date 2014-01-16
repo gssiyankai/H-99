@@ -89,6 +89,10 @@ problem17 = TestCase $ do
 	assertEqual 
   		"Split a list into two parts; the length of the first part is given" ("abcdefghik", []) (split "abcdefghik" 15)
 
+problem18 = TestCase $ do
+	assertEqual 
+  		"Extract a slice from a list" "cdefg" (slice ['a','b','c','d','e','f','g','h','i','k'] 3 7)
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -107,5 +111,6 @@ main = runTestTT $ TestList
 				problem14,
 				problem15,
 				problem16,
-				problem17
+				problem17,
+				problem18
 			]

@@ -107,3 +107,7 @@ split (x:xs) n = split' [x] xs n 1
 		| otherwise	= split' (xs ++ [y]) ys n (i+1)
 	      split' xs [] n i = (xs,[])
 
+-- Problem 18
+slice :: [a] -> Int -> Int -> [a]
+slice xs a b = snd $ split (fst $ split xs b) (a-1)
+
