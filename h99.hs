@@ -99,3 +99,11 @@ repli xs n = concatMap (replicate n) xs
 dropEvery :: [a] -> Int -> [a]
 dropEvery xs n = map snd $ filter ((n/=) . fst) $ zip (cycle [1..n]) xs
 
+-- Problem 17
+split :: [a] -> Int -> ([a],[a])
+split (x:xs) n = split' [x] xs n 1
+	where split' xs (y:ys) n i
+		| n==i		= (xs,(y:ys))
+		| otherwise	= split' (xs ++ [y]) ys n (i+1)
+	      split' xs [] n i = (xs,[])
+

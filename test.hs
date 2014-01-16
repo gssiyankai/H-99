@@ -83,6 +83,11 @@ problem16 = TestCase $ do
 	assertEqual 
   		"Drop every N'th element from a list" "abdeghk" (dropEvery "abcdefghik" 3)
 
+problem17 = TestCase $ do
+	assertEqual 
+  		"Split a list into two parts; the length of the first part is given" ("abc", "defghik") (split "abcdefghik" 3)
+	assertEqual 
+  		"Split a list into two parts; the length of the first part is given" ("abcdefghik", []) (split "abcdefghik" 15)
 
 main = runTestTT $ TestList
 			[
@@ -101,5 +106,6 @@ main = runTestTT $ TestList
 				problem13,
 				problem14,
 				problem15,
-				problem16
+				problem16,
+				problem17
 			]
