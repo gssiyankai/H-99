@@ -79,6 +79,10 @@ problem15 = TestCase $ do
 	assertEqual 
   		"Replicate the elements of a list a given number of times" "aaabbbccc" (repli "abc" 3)
 
+problem16 = TestCase $ do
+	assertEqual 
+  		"Drop every N'th element from a list" "abdeghk" (dropEvery "abcdefghik" 3)
+
 
 main = runTestTT $ TestList
 			[
@@ -96,5 +100,6 @@ main = runTestTT $ TestList
 				problem12,
 				problem13,
 				problem14,
-				problem15
+				problem15,
+				problem16
 			]

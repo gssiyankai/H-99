@@ -95,3 +95,7 @@ dupli = concatMap (replicate 2)
 repli :: [a] -> Int -> [a]
 repli xs n = concatMap (replicate n) xs
 
+-- Problem 16
+dropEvery :: [a] -> Int -> [a]
+dropEvery xs n = map snd $ filter ((n/=) . fst) $ zip (cycle [1..n]) xs
+
