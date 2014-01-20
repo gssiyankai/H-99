@@ -103,6 +103,10 @@ problem20 = TestCase $ do
 	assertEqual 
   		"Remove the K'th element from a list" ('b',"acd") (removeAt 2 "abcd")
 
+problem21 = TestCase $ do
+	assertEqual 
+  		"Insert an element at a given position into a list" "aXbcd" (insertAt 'X' "abcd" 2)
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -124,5 +128,6 @@ main = runTestTT $ TestList
 				problem17,
 				problem18,
 				problem19,
-				problem20
+				problem20,
+				problem21
 			]
