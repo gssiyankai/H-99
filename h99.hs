@@ -122,6 +122,6 @@ removeAt n xs = (xs !! (n-1), take (n-1) xs ++ drop n xs)
 
 -- Problem 21
 insertAt :: a -> [a] -> Int -> [a]
-insertAt elt lst 1 = (elt : lst)
-insertAt elt (x:xs) idx = (x : insertAt elt xs (idx-1))
+insertAt elt lst 1 = elt : lst
+insertAt elt (x:xs) idx = x : insertAt elt xs (idx-1)
 
