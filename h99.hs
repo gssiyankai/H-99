@@ -125,3 +125,9 @@ insertAt :: a -> [a] -> Int -> [a]
 insertAt elt lst 1 = elt : lst
 insertAt elt (x:xs) idx = x : insertAt elt xs (idx-1)
 
+-- Problem 22
+range :: Int -> Int -> [Int]
+range x y
+	| x==y           = [y]
+	| otherwise      = x : range (x+1) y
+

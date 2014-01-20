@@ -107,6 +107,11 @@ problem21 = TestCase $ do
 	assertEqual 
   		"Insert an element at a given position into a list" "aXbcd" (insertAt 'X' "abcd" 2)
 
+problem22 = TestCase $ do
+	assertEqual 
+  		"Create a list containing all integers within a given range" [4,5,6,7,8,9] (range 4 9)
+
+
 main = runTestTT $ TestList
 			[
 				problem1,
@@ -129,5 +134,6 @@ main = runTestTT $ TestList
 				problem18,
 				problem19,
 				problem20,
-				problem21
+				problem21,
+				problem22
 			]
