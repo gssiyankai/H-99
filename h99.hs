@@ -131,3 +131,31 @@ range x y
 	| x==y           = [y]
 	| otherwise      = x : range (x+1) y
 
+-- Problem 31
+isPrime :: Int -> Bool
+isPrime = undefined
+
+-- Problem 32
+myGCD :: Int -> Int -> Int
+myGCD = undefined
+
+-- Problem 33
+coprime :: Int -> Int -> Bool
+coprime = undefined
+
+-- Problem 35
+primeFactors :: Int -> [Int]
+primeFactors = undefined
+
+-- Problem 36
+prime_factors_mult :: Int -> [(Int, Int)]
+prime_factors_mult = undefined
+
+-- Problem 39
+primesR :: Int -> Int -> [Int]
+primesR = undefined
+
+-- Problem 40
+goldbach :: Int -> (Int, Int)
+goldbach = undefined
+

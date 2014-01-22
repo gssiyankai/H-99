@@ -111,6 +111,34 @@ problem22 = TestCase $ do
 	assertEqual 
   		"Create a list containing all integers within a given range" [4,5,6,7,8,9] (range 4 9)
 
+problem31 = TestCase $ do
+	assertEqual 
+  		"Determine whether a given integer number is prime" True (isPrime 7)
+
+problem32 = TestCase $ do
+	assertEqual 
+  		"Determine the greatest common divisor of two positive integer numbers" [9,3,3] [myGCD 36 63, myGCD (-3) (-6), myGCD (-3) 6]
+
+problem33 = TestCase $ do
+	assertEqual 
+  		"Determine whether two positive integer numbers are coprime" True (coprime 35 64)
+
+problem35 = TestCase $ do
+	assertEqual 
+  		"Determine the prime factors of a given positive integer. Construct a flat list containing the prime factors in ascending order" [3,3,5,7] (primeFactors 315)
+
+problem36 = TestCase $ do
+	assertEqual 
+  		"Determine the prime factors of a given positive integer" [(3,2),(5,1),(7,1)] (prime_factors_mult 315)
+
+problem39 = TestCase $ do
+	assertEqual 
+  		"A list of prime numbers" [11,13,17,19] (primesR 10 20)
+
+problem40 = TestCase $ do
+	assertEqual 
+  		"Goldbach's conjecture" (5, 23) (goldbach 28)
+
 
 main = runTestTT $ TestList
 			[
@@ -135,5 +163,12 @@ main = runTestTT $ TestList
 				problem19,
 				problem20,
 				problem21,
-				problem22
+				problem22,
+				problem31,
+				problem32,
+				problem33,
+				problem35,
+				problem36,
+				problem39,
+				problem40
 			]
