@@ -114,6 +114,10 @@ problem22 = TestCase $ do
 problem31 = TestCase $ do
 	assertEqual 
   		"Determine whether a given integer number is prime" True (isPrime 7)
+	assertEqual 
+  		"Determine whether a given integer number is prime" True (isPrime 5)
+	assertEqual 
+  		"Determine whether a given integer number is prime" False (isPrime 9)
 
 problem32 = TestCase $ do
 	assertEqual 

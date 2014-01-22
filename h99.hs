@@ -133,7 +133,10 @@ range x y
 
 -- Problem 31
 isPrime :: Int -> Bool
-isPrime = undefined
+isPrime 1 = False
+isPrime x = null $ dropWhile (\p -> x `mod` p /= 0) $ sieve [2 .. floor $ sqrt $ fromIntegral x]
+	where sieve [] = []
+	      sieve (p:xs) = p : sieve [x|x <- xs, x `mod` p > 0]
 
 -- Problem 32
 myGCD :: Int -> Int -> Int
