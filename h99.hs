@@ -154,7 +154,11 @@ coprime a b = 1 == myGCD a b
 
 -- Problem 35
 primeFactors :: Int -> [Int]
-primeFactors = undefined
+primeFactors a = primeFactors' a [] $ sieve [2..]
+	where	primeFactors' 1 fs _ = fs
+		primeFactors' a fs (p:ps)
+			| a `mod` p == 0	= primeFactors' (quot a p) (fs++[p]) (p:ps)
+			| otherwise		= primeFactors' a fs ps
 
 -- Problem 36
 prime_factors_mult :: Int -> [(Int, Int)]
