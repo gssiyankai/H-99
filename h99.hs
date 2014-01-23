@@ -135,8 +135,10 @@ range x y
 isPrime :: Int -> Bool
 isPrime 1 = False
 isPrime x = null $ dropWhile (\p -> x `mod` p /= 0) $ sieve [2 .. floor $ sqrt $ fromIntegral x]
-	where sieve [] = []
-	      sieve (p:xs) = p : sieve [x|x <- xs, x `mod` p > 0]
+
+sieve :: [Int] -> [Int]
+sieve [] = []
+sieve (p:xs) = p : sieve [x|x <- xs, x `mod` p > 0]
 
 -- Problem 32
 myGCD :: Int -> Int -> Int
@@ -160,7 +162,7 @@ prime_factors_mult = undefined
 
 -- Problem 39
 primesR :: Int -> Int -> [Int]
-primesR = undefined
+primesR a b = takeWhile (\p -> p < b) $ dropWhile (\p -> p < a) $ sieve [2..]
 
 -- Problem 40
 goldbach :: Int -> (Int, Int)
