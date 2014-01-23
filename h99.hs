@@ -1,5 +1,7 @@
 module H99 where
 
+import Data.List (group)
+
 -- Problem 1
 myLast :: [a] -> a
 myLast [x] = x
@@ -162,7 +164,7 @@ primeFactors a = primeFactors' a [] $ sieve [2..]
 
 -- Problem 36
 prime_factors_mult :: Int -> [(Int, Int)]
-prime_factors_mult = undefined
+prime_factors_mult a = map (\x -> (head x, length x)) $ group $ primeFactors a
 
 -- Problem 39
 primesR :: Int -> Int -> [Int]
