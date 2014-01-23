@@ -148,7 +148,7 @@ myGCD a b
 
 -- Problem 33
 coprime :: Int -> Int -> Bool
-coprime = undefined
+coprime a b = 1 == myGCD a b 
 
 -- Problem 35
 primeFactors :: Int -> [Int]
