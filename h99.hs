@@ -140,7 +140,11 @@ isPrime x = null $ dropWhile (\p -> x `mod` p /= 0) $ sieve [2 .. floor $ sqrt $
 
 -- Problem 32
 myGCD :: Int -> Int -> Int
-myGCD = undefined
+myGCD a 0 = a
+myGCD a b
+	| a < 0		= myGCD (-a) b
+	| b < 0		= myGCD a (-b)
+	| otherwise	= myGCD b (a `mod` b)
 
 -- Problem 33
 coprime :: Int -> Int -> Bool
