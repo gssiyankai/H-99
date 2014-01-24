@@ -177,3 +177,9 @@ goldbach x = goldbach' p ps
 				      | otherwise 	  = goldbach' p ps			
 	      (p:ps) = primesR 2 (x-1)
 
+-- Problem 49
+gray :: Int -> [String]
+gray 0 = [""]
+gray n = map ('0':) xs ++ map ('1':) (reverse xs)
+	where xs = gray (n-1)
+

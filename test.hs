@@ -143,6 +143,9 @@ problem40 = TestCase $ do
 	assertEqual 
   		"Goldbach's conjecture" (5, 23) (goldbach 28)
 
+problem49 = TestCase $ do
+	assertEqual 
+  		"Gray codes" ["000","001","011","010","110","111","101","100"] (gray 3)
 
 main = runTestTT $ TestList
 			[
@@ -174,5 +177,6 @@ main = runTestTT $ TestList
 				problem35,
 				problem36,
 				problem39,
-				problem40
+				problem40,
+				problem49
 			]
