@@ -172,5 +172,8 @@ primesR a b = takeWhile (\p -> p < b) $ dropWhile (\p -> p < a) $ sieve [2..]
 
 -- Problem 40
 goldbach :: Int -> (Int, Int)
-goldbach = undefined
+goldbach x = goldbach' p ps
+	where goldbach' a prim@(p:ps) | (x-a) `elem` prim = (a,(x-a))
+				      | otherwise 	  = goldbach' p ps			
+	      (p:ps) = primesR 2 (x-1)
 
